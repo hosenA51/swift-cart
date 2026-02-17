@@ -1,3 +1,10 @@
 * {
     font-family: "Poppins", sans-serif;
 }
+
+.active-link {
+    background-color: #EEF2FF;
+    color: #4F39F6;
+    padding: 6px 12px;
+    border-radius: 6px;
+}

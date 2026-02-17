@@ -36,107 +36,110 @@
             </div>
             <div class="navbar-center hidden lg:flex">
                 <ul class="menu menu-horizontal px-1">
-                    <li><a>Home</a></li>
-                    <li><a>Products</a></li>
-                    <li><a>About</a></li>
-                    <li><a>Contact</a></li>
+                    <li><a id="home-link" class="nav-link active-link" href="#">Home</a></li>
+                    <li><a id="products-link" class="nav-link" href="#">Products</a></li>
+                    <li><a id="about-link" class="nav-link" href="#">About</a></li>
+                    <li><a id="contact-link" class="nav-link" href="#">Contact</a></li>
                 </ul>
             </div>
             <div class="navbar-end relative">
-                <a class=""><i class="fa-solid fa-cart-shopping"></i></a>
+                <a class="cursor-pointer"><i class="fa-solid fa-cart-shopping"></i></a>
                 <div class="dropdown dropdown-end lg:hidden">
                     <div tabindex="0" role="button" class="btn btn-ghost">
                         <i class="fa-solid fa-bars text-lg"></i>
                     </div>
                     <ul tabindex="-1"
                         class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-40 p-2 shadow right-0">
-                        <li><a>Home</a></li>
-                        <li><a>Products</a></li>
-                        <li><a>About</a></li>
-                        <li><a>Contact</a></li>
+                        <li><a id="home-link" class="nav-link active-link" href="#">Home</a></li>
+                        <li><a id="products-link" class="nav-link" href="#">Products</a></li>
+                        <li><a id="about-link" class="nav-link" href="#">About</a></li>
+                        <li><a id="contact-link" class="nav-link" href="#">Contact</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Banner -->
-    <section>
-        <div class="hero relative h-auto" style="background-image: url('./Assets/banner-image.png');">
-            <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/30"></div>
-            <div class="hero-content text-neutral-content w-10/12 place-content-start my-36">
-                <div class="text-left md:w-2/4">
-                    <h1 class="mb-5 md:text-4xl text-2xl text-white font-bold">Best Collection For You</h1>
-                    <p class="mb-5 text-gray-300">
-                        Discover the latest trends in fashion, electronics, and more. Shop with confidence and style at
-                        SwiftCart
-                    </p>
-                    <button class="btn btn-primary px-8">Shop Now</button>
+    <main id="main-content">
+        <!-- Banner -->
+        <section>
+            <div class="hero relative h-auto" style="background-image: url('./Assets/banner-image.png');">
+                <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/30"></div>
+                <div class="hero-content text-neutral-content w-10/12 place-content-start my-36">
+                    <div class="text-left md:w-2/4">
+                        <h1 class="mb-5 md:text-4xl text-2xl text-white font-bold">Best Collection For You</h1>
+                        <p class="mb-5 text-gray-300">
+                            Discover the latest trends in fashion, electronics, and more. Shop with confidence and style
+                            at
+                            SwiftCart
+                        </p>
+                        <button class="btn btn-primary px-8">Shop Now</button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Why Choose Us -->
-    <section class="w-full mx-auto mt-16 bg-[#F9FAFB]">
-        <div class="md:w-10/12 w-full mx-auto">
-            <div class="w-full text-center">
-                <h1 class="mb-4 md:text-4xl text-2xl text-black font-bold">Why Choose Us</h1>
-                <p class="mb-4 text-gray-500">We provide the best shopping experience with top-notch services.</p>
+        <!-- Why Choose Us -->
+        <section class="w-full mx-auto mt-16 bg-[#F9FAFB]">
+            <div class="md:w-10/12 w-full mx-auto">
+                <div class="w-full text-center">
+                    <h1 class="mb-4 md:text-4xl text-2xl text-black font-bold">Why Choose Us</h1>
+                    <p class="mb-4 text-gray-500">We provide the best shopping experience with top-notch services.</p>
+                </div>
+                <div class="my-10 md:flex justify-between space-y-10">
+                    <div class="card bg-white md:w-64 w-11/12 shadow-sm pt-7 relative mx-auto md:mx-0">
+                        <div class="card-body">
+                            <h2 class="card-title">Fast Delivery</h2>
+                            <p class="text-gray-500">Get your orders delivered to your doorstep quickly and efficiently.
+                            </p>
+                            <div class="absolute -top-6 bg-[#EEF2FF] border-4 border-white p-3 rounded-md">
+                                <div class="text-xl text-[#4F39F6]">
+                                    <i class="fa-regular fa-truck"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card bg-white md:w-64 w-11/12 shadow-sm pt-7 relative mx-auto md:mx-0">
+                        <div class="card-body">
+                            <h2 class="card-title">24/7 Support</h2>
+                            <p class="text-gray-500">Our support team is available around the clock to assist you.
+                            </p>
+                            <div class="absolute -top-6 bg-[#EEF2FF] border-4 border-white p-3 rounded-md">
+                                <div class="text-xl text-[#4F39F6]">
+                                    <i class="fa-regular fa-headphones"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card bg-white md:w-64 w-11/12 shadow-sm pt-7 relative mx-auto md:mx-0">
+                        <div class="card-body">
+                            <h2 class="card-title">Secure Payment</h2>
+                            <p class="text-gray-500">Experience safe and secure transactions with our encrypted payment
+                                systems.
+                            </p>
+                            <div class="absolute -top-6 bg-[#EEF2FF] border-4 border-white p-3 rounded-md">
+                                <div class="text-xl text-[#4F39F6]">
+                                    <i class="fa-solid fa-calendar-check"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card bg-white md:w-64 w-11/12 shadow-sm pt-7 relative mx-auto md:mx-0 h-44">
+                        <div class="card-body h-52">
+                            <h2 class="card-title">Easy Returns</h2>
+                            <p class="text-gray-500">Not satisfied? Return your products easily within 30 days.
+                            </p>
+                            <div class="absolute -top-6 bg-[#EEF2FF] border-4 border-white p-3 rounded-md">
+                                <div class="text-xl text-[#4F39F6]">
+                                    <i class="fa-solid fa-rotate"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="my-10 md:flex justify-between space-y-10">
-                <div class="card bg-white md:w-64 w-11/12 shadow-sm pt-7 relative mx-auto md:mx-0">
-                    <div class="card-body">
-                        <h2 class="card-title">Fast Delivery</h2>
-                        <p class="text-gray-500">Get your orders delivered to your doorstep quickly and efficiently.
-                        </p>
-                        <div class="absolute -top-6 bg-[#EEF2FF] border-4 border-white p-3 rounded-md">
-                            <div class="text-xl text-[#4F39F6]">
-                                <i class="fa-regular fa-truck"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card bg-white md:w-64 w-11/12 shadow-sm pt-7 relative mx-auto md:mx-0">
-                    <div class="card-body">
-                        <h2 class="card-title">24/7 Support</h2>
-                        <p class="text-gray-500">Our support team is available around the clock to assist you.
-                        </p>
-                        <div class="absolute -top-6 bg-[#EEF2FF] border-4 border-white p-3 rounded-md">
-                            <div class="text-xl text-[#4F39F6]">
-                                <i class="fa-regular fa-headphones"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card bg-white md:w-64 w-11/12 shadow-sm pt-7 relative mx-auto md:mx-0">
-                    <div class="card-body">
-                        <h2 class="card-title">Secure Payment</h2>
-                        <p class="text-gray-500">Experience safe and secure transactions with our encrypted payment
-                            systems.
-                        </p>
-                        <div class="absolute -top-6 bg-[#EEF2FF] border-4 border-white p-3 rounded-md">
-                            <div class="text-xl text-[#4F39F6]">
-                                <i class="fa-solid fa-calendar-check"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card bg-white md:w-64 w-11/12 shadow-sm pt-7 relative mx-auto md:mx-0 h-44">
-                    <div class="card-body h-52">
-                        <h2 class="card-title">Easy Returns</h2>
-                        <p class="text-gray-500">Not satisfied? Return your products easily within 30 days.
-                        </p>
-                        <div class="absolute -top-6 bg-[#EEF2FF] border-4 border-white p-3 rounded-md">
-                            <div class="text-xl text-[#4F39F6]">
-                                <i class="fa-solid fa-rotate"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer class=" bg-[#1E2939]">
@@ -202,6 +205,23 @@
             </nav>
         </div>
     </footer>
+
+    <!-- Open the modal using ID.showModal() method -->
+    <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
+    <dialog id="product_modal" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box">
+            <div id="details-container" class="space-y-5">
+
+            </div>
+            <div class="modal-action">
+                <form method="dialog">
+                    <!-- if there is a button in form, it will close the modal -->
+                    <button class="btn">Close</button>
+                </form>
+            </div>
+        </div>
+    </dialog>
+    <script src="index.js"></script>
 </body>
 
 </html>

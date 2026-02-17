@@ -69,7 +69,6 @@ function showProductsPage() {
 }
 
 // Load Categories
-
 async function loadCategories() {
 
     const res = await fetch("https://fakestoreapi.com/products/categories");
@@ -114,9 +113,8 @@ async function loadCategories() {
 }
 
 // Load All Products
-
 async function loadAllProducts() {
-
+    showSpinner();
     const res = await fetch("https://fakestoreapi.com/products");
     const data = await res.json();
 
@@ -124,9 +122,8 @@ async function loadAllProducts() {
 }
 
 // Load Products by Category
-
 async function loadProductsByCategory(category) {
-
+    showSpinner();
     const res = await fetch(`https://fakestoreapi.com/products/category/${category}`);
     const data = await res.json();
 
@@ -134,7 +131,6 @@ async function loadProductsByCategory(category) {
 }
 
 // Display Products
-
 function displayProducts(products) {
 
     const container = document.getElementById("product-container");
@@ -179,7 +175,6 @@ function displayProducts(products) {
 }
 
 // Display Products details Modal
-
 const loadProductDetail = async (id) => {
     const url = `https://fakestoreapi.com/products/${id}`;
     const res = await fetch(url);
@@ -216,3 +211,87 @@ const displayProductDetails = (product) => {
     `;
     document.getElementById("product_modal").showModal();
 };
+
+// Display top-rated 03 Trending Product in Home
+const loadTrendingProducts = async () => {
+
+    const res = await fetch("https://fakestoreapi.com/products");
+    const data = await res.json();
+
+    // Sort by rating (highest first)
+    const topRated = data
+        .sort((a, b) => b.rating.rate - a.rating.rate)
+        .slice(0, 3);
+
+    displayTrendingProducts(topRated);
+};
+
+const displayTrendingProducts = (products) => {
+
+    const container = document.getElementById("trending-container");
+
+    if (!container) return;
+
+    container.innerHTML = "";
+
+    products.forEach(product => {
+
+        container.innerHTML += `
+            <div class="card bg-base-100 shadow-md hover:shadow-xl transition duration-300">
+                
+                <figure class="h-52 p-4 bg-gray-100">
+                    <img src="${product.image}" class="h-full object-contain"/>
+                </figure>
+
+                <div class="card-body p-4">
+
+                    <div class="flex justify-between items-center">
+                        <span class="badge bg-[#EEF2FF] text-[#4F39F6] capitalize">
+                            ${product.category}
+                        </span>
+                        <span class="text-sm text-gray-500">
+                            <span class="text-yellow-400">
+                                <i class="fa-solid fa-star"></i>
+                            </span>
+                            ${product.rating.rate} (${product.rating.count})
+                        </span>
+                    </div>
+
+                    <h2 class="font-semibold mt-2 truncate">
+                        ${product.title}
+                    </h2>
+
+                    <p class="font-bold mt-2">
+                        $${product.price}
+                    </p>
+
+                    <div class="flex gap-3 mt-4">
+                        <button onclick="loadProductDetail(${product.id})"
+                            class="btn btn-sm btn-outline flex-1">
+                            <i class="fa-solid fa-eye"></i> Details
+                        </button>
+
+                        <button class="btn btn-sm btn-primary flex-1">
+                            <i class="fa-solid fa-cart-plus"></i> Add
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        `;
+    });
+};
+
+// Manage Spinner
+const showSpinner = () => {
+    const container = document.getElementById("product-container");
+    container.innerHTML = `
+        <div class="col-span-full flex justify-center items-center py-20">
+            <span class="loading loading-bars loading-xl"></span>
+        </div>
+    `;
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+    loadTrendingProducts();
+});

@@ -1,7 +1,4 @@
 const mainContent = document.getElementById("main-content");
-// const productsLink = document.getElementById("products-link");
-// const aboutLink = document.getElementById("about-link");
-// const contactLink = document.getElementById("contact-link");
 
 const navLinks = document.querySelectorAll(".nav-link");
 
@@ -9,10 +6,8 @@ navLinks.forEach(link => {
     link.addEventListener("click", function (e) {
         e.preventDefault();
 
-        // Remove active class from all
         navLinks.forEach(l => l.classList.remove("active-link"));
 
-        // Add active class to clicked
         this.classList.add("active-link");
 
         const page = this.dataset.page;
@@ -43,57 +38,10 @@ navLinks.forEach(link => {
     });
 });
 
-
 function setActive(link) {
     navLinks.forEach(l => l.classList.remove("active-link"));
     link.classList.add("active-link");
 }
-
-// productsLink.addEventListener("click", function (e) {
-//     e.preventDefault();
-//     setActive(productsLink);
-//     showProductsPage();
-// });
-
-// aboutLink.addEventListener("click", function (e) {
-//     e.preventDefault();
-
-//     mainContent.innerHTML = `
-//         <section class="w-10/12 mx-auto my-16">
-//             <h1 class="text-3xl font-bold mb-8">About</h1>
-//             <div id="about-container" class="grid md:grid-cols-3 gap-6"></div>
-//         </section>
-//     `;
-
-//     loadAllProducts();
-// });
-
-// contactLink.addEventListener("click", function (e) {
-//     e.preventDefault();
-
-//     mainContent.innerHTML = `
-//         <section class="w-10/12 mx-auto my-16">
-//             <h1 class="text-3xl font-bold mb-8">Contact</h1>
-//             <div id="contact-container" class="grid md:grid-cols-3 gap-6"></div>
-//         </section>
-//     `;
-
-//     loadAllProducts();
-// });
-
-// document.getElementById("home-link").addEventListener("click", function (e) {
-//     e.preventDefault();
-//     location.reload();
-// });
-
-// const navLinks = document.querySelectorAll(".nav-link");
-
-// navLinks.forEach(link => {
-//     link.addEventListener("click", function () {
-//         navLinks.forEach(l => l.classList.remove("active-link"));
-//         this.classList.add("active-link");
-//     });
-// });
 
 function showProductsPage() {
 
@@ -104,7 +52,6 @@ function showProductsPage() {
             <div id="product-container" class="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-6"></div>
         </section>
     `;
-
     loadCategories();
     loadAllProducts();
 }
